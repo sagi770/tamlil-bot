@@ -77,7 +77,7 @@ describe('strings', () => {
         s.openWarning(1),
         s.speaker('1'),
         s.speakersCount(2),
-        s.transcriptFileName(new Date(2026, 0, 1), 'UTC'),
+        s.transcriptFileName(new Date(Date.UTC(2026, 0, 1)), 'UTC'),
         ...(['invalid-url', 'not-https', 'blocked-host', 'drive-folder', 'youtube-unsupported'] as const).map((r) =>
           s.linkRejected(r),
         ),

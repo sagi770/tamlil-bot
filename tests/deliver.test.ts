@@ -18,7 +18,7 @@ describe('deliverTranscript', () => {
     expect(tg.calls[0].args[2].keyboard).toEqual([[{ text: '📋 סכם', callback_data: 'sum' }]]);
   });
   it('sends a long transcript as a .txt file with the footer as caption', async () => {
-    const { deps, tg } = makeDeps({ now: () => new Date(2026, 10, 20, 14, 30) });
+    const { deps, tg } = makeDeps({ now: () => new Date(Date.UTC(2026, 10, 20, 12, 30)) });
     const out = await deliverTranscript(deps, { chatId: 5, replyTo: 3, segments: [seg('1', 0, 'א'.repeat(4000))], durationMs: 60_000 });
     expect(tg.calls[0].method).toBe('sendDocument');
     expect(tg.calls[0].args[1].name).toBe('תמליל 2026-11-20 14-30.txt');
