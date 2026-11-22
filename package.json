@@ -1,0 +1,51 @@
+{
+  "name": "tamlil-bot",
+  "version": "0.1.0",
+  "description": "Telegram bot that transcribes voice messages, audio and video by speaker with Soniox, with optional OpenAI summaries. Runs on Vercel's free Hobby plan.",
+  "keywords": [
+    "telegram",
+    "telegram-bot",
+    "transcription",
+    "speech-to-text",
+    "diarization",
+    "soniox",
+    "vercel",
+    "hebrew"
+  ],
+  "homepage": "https://github.com/sagi770/tamlil-bot#readme",
+  "bugs": {
+    "url": "https://github.com/sagi770/tamlil-bot/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagi770/tamlil-bot.git"
+  },
+  "author": "Sagi Tawil",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "setup": "tsx scripts/setup.ts",
+    "doctor": "tsx scripts/doctor.ts",
+    "dev": "tsx scripts/dev.ts"
+  },
+  "dependencies": {
+    "@soniox/node": "^2.5.0",
+    "@vercel/functions": "^3.11.3"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "eslint": "^10.15.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.73.0",
+    "vitest": "^5.1.1"
+  }
+}
